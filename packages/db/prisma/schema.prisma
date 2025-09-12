@@ -6,10 +6,42 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+enum titleWebhook {
+  POST
+  GET
+}
+
+model User {
+  id        String      @id @default(uuid())
+  name      String      
+  email     String
+  password  String
+}
+model Credentials {
+  id        String        @id @default(uuid())
+  platform  String        @unique
+  title     String        
+  data      Json
+}
+model Workflow {
+  id            String    @id @default(uuid())
+  title         String    @unique
+  enabled       Boolean   @default(false)
+  nodes          Json
+  Connections    Json
+}
+model Webhook {
+  id        String      @id @default(uuid())
+  title     String      @unique
+  method    titleWebhook
+  path      String
+  header    String
+  secret    String
 }
