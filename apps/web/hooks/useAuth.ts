@@ -20,6 +20,7 @@ export const useAuth = () => {
     onSuccess: (data) => {
       queryClient.setQueryData(["user"], data.user);
       toast.success("Login successful!");
+      router.push("/dashboard");
     },
     onError: () => {
       toast.error("Login failed");
@@ -39,7 +40,7 @@ export const useAuth = () => {
     onSuccess: (data) => {
       queryClient.setQueryData(["user"], data.user);
       toast.success("Registration successful!");
-      router.push("/");
+      router.push("/dashboard");
     },
     onError: () => {
       toast.error("Registration failed");

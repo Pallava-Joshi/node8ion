@@ -9,19 +9,24 @@ const Header = () => {
     <header className="fixed top-0 w-full px-4 py-6 md:px-8 lg:px-12 bg-white z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <div className="w-2 h-2 bg-black rounded-full"></div>
-          <span className="text-xl font-semibold font-ibm-plex-mono">100xness</span>
+          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+            <span className="text-white font-bold text-lg">n8n</span>
+          </div>
+          <span className="text-xl font-semibold">n8n</span>
         </Link>
 
         <nav className="hidden md:flex items-center space-x-8 lg:space-x-12">
-          <Link href="/" className="text-black hover:text-gray-700 transition-colors font-instrument-sans">
+          <Link href="/" className="text-black hover:text-gray-700 transition-colors">
             Home
           </Link>
-          <Link href="/trade" className="text-black hover:text-gray-700 transition-colors font-instrument-sans">
-            Trade
+          <Link href="/workflows" className="text-black hover:text-gray-700 transition-colors">
+            Workflows
           </Link>
-          <Link href="/marketplace" className="text-black hover:text-gray-700 transition-colors font-instrument-sans">
-            Marketplace
+          <Link href="/integrations" className="text-black hover:text-gray-700 transition-colors">
+            Integrations
+          </Link>
+          <Link href="/docs" className="text-black hover:text-gray-700 transition-colors">
+            Docs
           </Link>
         </nav>
 
