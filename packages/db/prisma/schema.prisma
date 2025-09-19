@@ -32,7 +32,7 @@ model Credentials {
 }
 model Workflow {
   id            String    @id @default(uuid())
-  title         String    @unique
+  title         String    @default("untitled")
   enabled       Boolean   @default(false)
   nodes          Json
   Connections    Json
